@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-bg: #0c1014;
+  --color-surface: #151b21;
+  --color-surface-2: #1e272f;
+  --color-fg: #f4f7f8;
+  --color-muted: #93a1aa;
+  --color-primary: #e30a17;
+  --color-primary-fg: #ffffff;
+  --color-azure: #00a3d7;
+  --color-hit: #0e7a3d;
+  --color-hit-fg: #f3fff6;
+  --color-border: #2c3842;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+  input,
+  select {
+    font: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-azure);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-swap {
+    transition: none;
+  }
+}
